@@ -17,6 +17,8 @@ const io = new Server(server, {
       'http://localhost:5173',
       'http://localhost:5174',
       process.env.CLIENT_URL || 'https://skribbl-client.onrender.com',
+      'https://scribble.vidyarupi.com/', '0.0.0.0'
+
     ].filter(Boolean),
     methods: ['GET', 'POST'],
   },
