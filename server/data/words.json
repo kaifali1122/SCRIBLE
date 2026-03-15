@@ -1,0 +1,43 @@
+{
+  "animals": [
+    "cat", "dog", "elephant", "giraffe", "lion", "tiger", "penguin", "dolphin",
+    "monkey", "rabbit", "snake", "eagle", "whale", "bear", "fox", "deer",
+    "horse", "zebra", "panda", "kangaroo", "owl", "shark", "butterfly", "frog",
+    "turtle", "octopus", "parrot", "wolf", "crocodile", "hamster"
+  ],
+  "objects": [
+    "chair", "table", "lamp", "phone", "computer", "book", "clock", "mirror",
+    "umbrella", "guitar", "camera", "scissors", "hammer", "key", "bottle",
+    "pillow", "candle", "bicycle", "television", "microphone", "headphones",
+    "backpack", "wallet", "sunglasses", "toothbrush", "ladder", "envelope",
+    "telescope", "compass", "trophy"
+  ],
+  "food": [
+    "pizza", "burger", "sushi", "cake", "cookie", "banana", "apple", "sandwich",
+    "ice cream", "popcorn", "watermelon", "pancake", "donut", "chocolate",
+    "cheese", "egg", "bread", "pasta", "taco", "pie", "cupcake", "grapes",
+    "mushroom", "carrot", "broccoli", "strawberry", "lemon", "coconut",
+    "avocado", "pineapple"
+  ],
+  "actions": [
+    "running", "swimming", "dancing", "singing", "sleeping", "cooking",
+    "fishing", "painting", "reading", "climbing", "jumping", "flying",
+    "driving", "crying", "laughing", "surfing", "skiing", "boxing",
+    "juggling", "sneezing", "yawning", "waving", "digging", "knitting",
+    "skateboarding", "archery", "bowling", "hiking", "yoga", "karate"
+  ],
+  "places": [
+    "beach", "mountain", "castle", "hospital", "school", "library", "airport",
+    "museum", "zoo", "park", "restaurant", "church", "stadium", "bridge",
+    "lighthouse", "volcano", "desert", "island", "waterfall", "pyramid",
+    "skyscraper", "farm", "cave", "forest", "jungle", "temple", "palace",
+    "subway", "harbor", "canyon"
+  ],
+  "things": [
+    "rainbow", "tornado", "lightning", "sunrise", "snowflake", "fire",
+    "treasure", "crown", "sword", "shield", "rocket", "satellite",
+    "parachute", "anchor", "diamond", "balloon", "kite", "puzzle",
+    "maze", "robot", "ghost", "vampire", "mermaid", "unicorn",
+    "dragon", "pirate", "ninja", "wizard", "spaceship", "planet"
+  ]
+}

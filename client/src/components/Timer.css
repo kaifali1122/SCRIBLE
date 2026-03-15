@@ -1,0 +1,43 @@
+.timer {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.timer-bg-circle {
+  stroke: rgba(255,255,255,0.1);
+}
+
+.timer-progress-circle {
+  stroke: var(--accent-primary);
+  transition: stroke-dashoffset 1s linear, stroke 0.3s;
+}
+
+.timer.low .timer-progress-circle {
+  stroke: var(--accent-danger);
+}
+
+.timer.low .timer-text {
+  color: var(--accent-danger);
+  animation: pulse 0.5s infinite;
+}
+
+.timer-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  z-index: 1;
+}
+
+.timer:not(.active) .timer-text {
+  color: var(--text-muted);
+}

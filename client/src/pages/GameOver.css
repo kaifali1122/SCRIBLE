@@ -1,0 +1,144 @@
+.game-over {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: radial-gradient(ellipse at center, rgba(108, 99, 255, 0.12) 0%, transparent 60%);
+}
+
+.go-content {
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.go-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.go-trophy {
+  font-size: 72px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.go-header h1 {
+  font-size: 40px;
+  font-weight: 900;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.go-winner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.1));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: var(--radius-lg);
+  margin-top: 8px;
+}
+
+.go-winner-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.go-winner-name {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffd700;
+}
+
+.go-winner-score {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.go-reason {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.go-leaderboard {
+  padding: 20px;
+  text-align: left;
+}
+
+.go-leaderboard h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.go-rankings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.go-rank-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.03);
+  animation: fadeIn 0.3s ease forwards;
+  opacity: 0;
+}
+
+.go-rank-item.rank-1 {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
+  border: 1px solid rgba(255, 215, 0, 0.15);
+}
+
+.go-rank-item.rank-2 {
+  background: rgba(192, 192, 192, 0.06);
+  border: 1px solid rgba(192, 192, 192, 0.1);
+}
+
+.go-rank-item.rank-3 {
+  background: rgba(205, 127, 50, 0.06);
+  border: 1px solid rgba(205, 127, 50, 0.1);
+}
+
+.go-rank-pos {
+  font-size: 18px;
+  min-width: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.go-rank-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.go-rank-score {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.go-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}

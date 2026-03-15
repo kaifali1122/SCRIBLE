@@ -1,0 +1,93 @@
+.player-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.player-list h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.player-list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pl-player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.03);
+  transition: background 0.2s;
+}
+
+.pl-player.is-me {
+  background: rgba(108, 99, 255, 0.1);
+}
+
+.pl-player.is-drawer {
+  background: rgba(255, 171, 64, 0.1);
+  border: 1px solid rgba(255, 171, 64, 0.15);
+}
+
+.pl-player.has-guessed {
+  background: rgba(0, 230, 118, 0.08);
+}
+
+.pl-rank {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  min-width: 20px;
+}
+
+.pl-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.pl-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pl-name {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pl-you {
+  font-size: 10px;
+  color: var(--accent-primary);
+  font-weight: 400;
+}
+
+.pl-score {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.pl-guessed,
+.pl-drawing {
+  font-size: 14px;
+  flex-shrink: 0;
+}
