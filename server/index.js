@@ -10,22 +10,16 @@ const { registerDrawHandlers } = require('./handlers/drawHandler');
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server)
 
-// const io = new Server(server, {
-//   cors: {
-//     origin: [
-//       'http://localhost:5173',
-//       'http://localhost:5174',
-//       process.env.CLIENT_URL || 'https://skribbl-client.onrender.com',
-//       'https://scribble.vidyarupi.com/', '0.0.0.0'
 
-//     ].filter(Boolean),
-//     methods: ['GET', 'POST'],
-//   },
-// });
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST'],
+  },
+});
 
-app.use(cors(''));
+app.use(cors('0.0.0.0'));
 app.use(express.json());
 
 // Health check
