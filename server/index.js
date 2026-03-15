@@ -13,7 +13,11 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
+    origin: [
+      'http://localhost:5173',
+      'http://localhost:5174',
+      process.env.CLIENT_URL || 'https://skribbl-client.onrender.com',
+    ].filter(Boolean),
     methods: ['GET', 'POST'],
   },
 });
