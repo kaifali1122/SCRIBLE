@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Home from './pages/Home';
 import Lobby from './pages/Lobby';
 import Game from './pages/Game';
@@ -6,17 +6,30 @@ import GameOver from './pages/GameOver';
 import './App.css';
 
 function App() {
-  const [screen, setScreen] = useState('home'); // home, lobby, game, gameOver
+  const [screen, setScreen] = useState('home');
   const [roomData, setRoomData] = useState(null);
   const [playerId, setPlayerId] = useState(null);
   const [playerName, setPlayerName] = useState('');
   const [gameOverData, setGameOverData] = useState(null);
+  const [inviteCode, setInviteCode] = useState('');
+
+  // Check URL for invite link on load: ?room=CODE
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const roomCode = params.get('room');
+    if (roomCode) {
+      setInviteCode(roomCode.toUpperCase());
+    }
+  }, []);
 
   const goToLobby = (room, id, name) => {
     setRoomData(room);
     setPlayerId(id);
     setPlayerName(name);
     setScreen('lobby');
+    // Clean URL after joining
+    window.history.replaceState({}, '', window.location.pathname);
+    setInviteCode('');
   };
 
   const goToGame = (data) => {
@@ -46,7 +59,7 @@ function App() {
   return (
     <div className="app">
       {screen === 'home' && (
-        <Home onJoinLobby={goToLobby} />
+        <Home onJoinLobby={goToLobby} inviteCode={inviteCode} />
       )}
       {screen === 'lobby' && (
         <Lobby

@@ -6,6 +6,7 @@ function Lobby({ roomData, playerId, playerName, onGameStart, onLeave }) {
   const [players, setPlayers] = useState(roomData?.players || []);
   const [settings, setSettings] = useState(roomData?.settings || {});
   const [copied, setCopied] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   const isHost = playerId === roomData?.hostId;
 
   useEffect(() => {
@@ -53,6 +54,14 @@ function Lobby({ roomData, playerId, playerName, onGameStart, onLeave }) {
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const shareInviteLink = () => {
+    const baseUrl = window.location.origin + window.location.pathname;
+    const inviteUrl = `${baseUrl}?room=${roomData?.id}`;
+    navigator.clipboard.writeText(inviteUrl);
+    setLinkCopied(true);
+    setTimeout(() => setLinkCopied(false), 3000);
+  };
+
   const handleLeave = () => {
     socket.disconnect();
     onLeave();
@@ -68,6 +77,9 @@ function Lobby({ roomData, playerId, playerName, onGameStart, onLeave }) {
             <span className="room-code-value">{roomData?.id}</span>
             <span className="room-code-copy">{copied ? '✅ Copied!' : '📋 Click to copy'}</span>
           </div>
+          <button className="btn btn-share" onClick={shareInviteLink}>
+            {linkCopied ? '✅ Link Copied!' : '🔗 Share Invite Link'}
+          </button>
         </div>
 
         <div className="lobby-body">

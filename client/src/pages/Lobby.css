@@ -70,6 +70,26 @@
   color: var(--text-secondary);
 }
 
+.btn-share {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00d2ff, #6c63ff);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+}
+
+.btn-share:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 210, 255, 0.4);
+}
+
 .lobby-body {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import socket from '../socket';
 import './Home.css';
 
-function Home({ onJoinLobby }) {
+function Home({ onJoinLobby, inviteCode }) {
   const [name, setName] = useState('');
   const [roomCode, setRoomCode] = useState('');
   const [mode, setMode] = useState('menu'); // menu, create, join
@@ -17,6 +17,14 @@ function Home({ onJoinLobby }) {
     wordCount: 3,
     hints: 2,
   });
+
+  // If invite code from URL, auto-open join panel
+  useEffect(() => {
+    if (inviteCode) {
+      setRoomCode(inviteCode);
+      setMode('join');
+    }
+  }, [inviteCode]);
 
   const connect = () => {
     if (!socket.connected) {
@@ -196,6 +204,20 @@ function Home({ onJoinLobby }) {
           <div className="home-panel glass-card animate-pop-in">
             <h2>Join a Room</h2>
 
+            {!name.trim() && (
+              <div className="name-input-group">
+                <label>Your Name</label>
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Enter your name..."
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  maxLength={20}
+                />
+              </div>
+            )}
+
             <div className="join-input-group">
               <label>Room Code</label>
               <input
@@ -211,7 +233,7 @@ function Home({ onJoinLobby }) {
             {error && <p className="error-text">{error}</p>}
 
             <div className="panel-actions">
-              <button className="btn btn-secondary" onClick={() => { setMode('menu'); setError(''); }}>
+              <button className="btn btn-secondary" onClick={() => { setMode('menu'); setError(''); setRoomCode(''); }}>
                 ← Back
               </button>
               <button className="btn btn-primary" onClick={handleJoin} disabled={loading}>
@@ -220,6 +242,11 @@ function Home({ onJoinLobby }) {
             </div>
           </div>
         )}
+
+        {/* Developer Credit */}
+        <div className="home-credit">
+          Developed by <span className="credit-name">Kaif</span>
+        </div>
       </div>
     </div>
   );
