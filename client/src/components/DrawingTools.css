@@ -112,3 +112,49 @@
   background: rgba(255, 82, 82, 0.2);
   border-color: var(--accent-danger);
 }
+
+@media (max-width: 768px) {
+  .drawing-tools {
+    padding: 6px 8px;
+    gap: 8px;
+  }
+
+  .colors-section {
+    max-width: 200px;
+  }
+
+  .color-btn {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+  }
+
+  .size-slider {
+    width: 60px;
+  }
+
+  .size-label {
+    display: none;
+  }
+
+  .tool-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .colors-section {
+    max-width: 160px;
+  }
+
+  .color-btn {
+    width: 16px;
+    height: 16px;
+  }
+
+  .size-slider {
+    width: 40px;
+  }
+}

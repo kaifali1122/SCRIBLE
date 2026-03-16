@@ -192,8 +192,47 @@
   animation: pulse 2s infinite;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+  .lobby {
+    padding: 12px;
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .lobby-container {
+    gap: 16px;
+  }
+
+  .lobby-header h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .room-code-display {
+    padding: 10px 20px;
+  }
+
+  .room-code-value {
+    font-size: 24px;
+    letter-spacing: 4px;
+  }
+
   .lobby-body {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .lobby-players,
+  .lobby-settings {
+    padding: 14px;
+  }
+
+  .lobby-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lobby-footer .btn {
+    width: 100%;
   }
 }
