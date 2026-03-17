@@ -243,10 +243,6 @@ function Home({ onJoinLobby, inviteCode }) {
           </div>
         )}
 
-        {/* Developer Credit */}
-        <div className="home-credit">
-          Developed by <span className="credit-name">Kaif</span>
-        </div>
       </div>
     </div>
   );
